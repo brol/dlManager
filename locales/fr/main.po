@@ -1,0 +1,292 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: DL Manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-11-18 16:14+0100\n"
+"PO-Revision-Date: 2009-10-24 17:20+0100\n"
+"Last-Translator: Kozlika <kozlika@free.fr>\n"
+"Language-Team: Moe <poedit@gniark.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: _public.php:146
+msgid "parent directory"
+msgstr "répertoire parent"
+
+#: _public.php:165
+msgid "previous"
+msgstr "précédente"
+
+#: _public.php:166
+msgid "next"
+msgstr "suivante"
+
+#: lib.dlManager.php:90
+msgid "By names, ascendant"
+msgstr "Par noms, croissants"
+
+#: lib.dlManager.php:91
+msgid "By names, descendant"
+msgstr "Par noms, décroissants"
+
+#: lib.dlManager.php:92
+msgid "By dates, ascendant"
+msgstr "Par dates, croissantes"
+
+#: lib.dlManager.php:93
+msgid "By dates, descendant"
+msgstr "Par dates, décroissantes"
+
+#: public_l10n.php:3
+msgid "Basename"
+msgstr "Nom du fichier"
+
+#: public_l10n.php:4
+#: _widget.php:61
+msgid "Directories"
+msgstr "Répertoires"
+
+#: public_l10n.php:5
+#: index.php:90
+#: index.php:95
+#: index.php:100
+#: index.php:128
+#: index.php:138
+#: index.php:168
+#: index.php:176
+#: index.php:179
+#: index.php:185
+#: index.php:191
+#: index.php:197
+#: _widget.php:45
+#: _widget.php:49
+#: _widget.php:75
+#: _widget.php:76
+msgid "Download manager"
+msgstr "Gestionnaire de téléchargements"
+
+msgid "Download manager - Preview"
+msgstr "Gestionnaire de téléchargements - Aperçu"
+
+#: public_l10n.php:6
+msgid "Downloads"
+msgstr "Téléchargements"
+
+#: public_l10n.php:7
+msgid "Download this file"
+msgstr "Télécharger ce fichier"
+
+#: public_l10n.php:8
+msgid "Entries containing this media"
+msgstr "Billets contenant ce média"
+
+#: public_l10n.php:10
+msgid "File"
+msgstr "Fichier"
+
+#: public_l10n.php:11
+#: _widget.php:67
+msgid "Files"
+msgstr "Fichiers"
+
+#: public_l10n.php:12
+msgid "Get back to the directory"
+msgstr "Revenir au répertoire"
+
+#: public_l10n.php:14
+msgid "Image meta"
+msgstr "Métadonnées"
+
+#: public_l10n.php:15
+msgid "Informations"
+msgstr "Informations"
+
+#: public_l10n.php:16
+msgid "Media type"
+msgstr "Type de média"
+
+#: public_l10n.php:17
+msgid "Modification time"
+msgstr "Date de modification"
+
+#: public_l10n.php:18
+msgid "No directory."
+msgstr "Aucun répertoire."
+
+#: public_l10n.php:19
+msgid "No file."
+msgstr "Aucun fichier."
+
+#: public_l10n.php:20
+msgid "Page(s):"
+msgstr "Page(s)&nbsp;:"
+
+#: public_l10n.php:21
+#: _widget.php:184
+msgid "Preview:"
+msgstr "Aperçu :"
+
+#: public_l10n.php:23
+msgid "Size"
+msgstr "Taille"
+
+#: index.php:72
+msgid "Configuration successfully updated."
+msgstr "Configuration mise à jour avec succès."
+
+#: index.php:95
+#, php-format
+msgid "Enable the %s"
+msgstr "Activer le %s"
+
+#: index.php:99
+#, php-format
+msgid "The %s display media on a public page."
+msgstr "Le %s affiche les médias sur une page publique."
+
+#: index.php:106
+msgid "Hide URLs of images, mp3, flv, mp4 and m4v files"
+msgstr "Cacher les URLs des images et des fichiers flv, mp4 et m4v"
+
+#: index.php:110
+#, php-format
+msgid "The images, mp3, flv, mp4 and m4v files will be served without revealing their URLs in %1$s and %2$s tags."
+msgstr "Les images et les fichiers mp3, flv, mp4 et m4v seront servis sans révéler leurs URLs dans les balises %1$s et %2$s."
+
+#: index.php:113
+#, php-format
+msgid "The public directory (or its subdirectories) can be in a restricted area or protected by a %1$s file containing %2$s."
+msgstr "Le répertoire public (ou ses sous-répertoires) peut être dans une zone protégée ou protégé par un fichier %1$s contenant %2$s."
+
+#: index.php:120
+msgid "Enable the download counter"
+msgstr "Activer le compteur de téléchargements"
+
+#: index.php:127
+#, php-format
+msgid "Redirect attachments links to %s"
+msgstr "Rediriger les liens des pièces jointes vers %s"
+
+#: index.php:132
+msgid "When downloading an attachment, the download counter will be increased."
+msgstr "Lors du téléchargement d'une pièce jointe, le compteur de téléchargements sera augmenté."
+
+#: index.php:134
+#, php-format
+msgid "This will redefine the %s tag."
+msgstr "Ceci redéfinira la balise %s."
+
+#: index.php:137
+#, php-format
+msgid "The attachments must be located in the root of %s"
+msgstr "Les pièces jointes doivent être placées dans la racine de %s"
+
+#: index.php:143
+msgid "Files per page:"
+msgstr "Fichiers par page&nbsp;:"
+
+#: index.php:153
+msgid "Allow visitors to choose how to sort files"
+msgstr "Autoriser les visiteurs à choisir l'ordre des fichiers"
+
+#: index.php:164
+#: index.php:174
+msgid "Leave empty to cancel this feature."
+msgstr "Laisser vide pour annuler cette fonction."
+
+#: index.php:168
+#, php-format
+msgid "Define root of %s:"
+msgstr "Définir la racine de %s&nbsp;:"
+
+#: index.php:175
+#, php-format
+msgid "This will change the root of the %s page and of the widget."
+msgstr "Ceci changera la racine de la page %s et du widget."
+
+#: index.php:178
+#, php-format
+msgid "If you change this setting, reconfigure the %s widget."
+msgstr "Si vous changez ce paramètre, reconfigurez le widget %s."
+
+#: index.php:181
+#: index.php:191
+msgid "Leave blank to disable this feature."
+msgstr "Laissez vide pour désactiver cette option."
+
+#: index.php:184
+#, php-format
+msgid "Files can be excluded from %1$s by editing %2$s in %3$s."
+msgstr "Les fichiers peuvent être exclus de %1$s en éditant %2$s dans %3$s."
+
+#: index.php:187
+#, php-format
+msgid "For example, to exclude %1$s and %2$s files: %3$s"
+msgstr "Par exemple, pour exclure les fichiers %1$s et %2$s&nbsp;: %3$s"
+
+#: index.php:191
+#, php-format
+msgid "URL of the %s page:"
+msgstr "URL de la page %s&nbsp;:"
+
+#: index.php:197
+#, php-format
+msgid "View the %s page"
+msgstr "Voir la page %s"
+
+msgid "View the Download Manager public page"
+msgstr "Voir la page publique Gestionnaire de téléchargement"
+
+#: index.php:202
+msgid "Save configuration"
+msgstr "Enregistrer la configuration"
+
+#: _widget.php:54
+msgid "Root directory:"
+msgstr "Répertoire de base&nbsp;:"
+
+#: _widget.php:57
+msgid "Display subdirectories"
+msgstr "Afficher les sous-répertoires"
+
+#: _widget.php:60
+msgid "Subdirectories title:"
+msgstr "Titre des sous-répertoires&nbsp;:"
+
+#: _widget.php:63
+msgid "Display files"
+msgstr "Afficher les fichiers"
+
+#: _widget.php:66
+msgid "Files title:"
+msgstr "Titre des fichiers&nbsp;:"
+
+#: _widget.php:69
+msgid "Block display:"
+msgstr "Affichage du bloc&nbsp;:"
+
+#: _widget.php:71
+msgid "Item display:"
+msgstr "Affichage d'un élément&nbsp;:"
+
+#: _widget.php:75
+#, php-format
+msgid "Add a link to %s in the widget:"
+msgstr "Ajouter un lien vers %s dans le widget&nbsp;:"
+
+#: _widget.php
+msgid "List of resources for download"
+msgstr "Liste des ressources à télécharger"
+
+msgid "Preview"
+msgstr "Aperçu"
+
+msgid "Zip file content"
+msgstr "Contenu de l'archive"

@@ -1,0 +1,26 @@
+<?php # made by Dotclear l10n.sh
+__("Archives");
+__("Basename");
+__("Directories");
+__("Download manager");
+__("Downloads");
+__("Download this file");
+__("Entries containing this media");
+__("Extension");
+__("File");
+__("Files");
+__("Get back to the directory");
+__("Home");
+__("Image meta");
+__("Informations");
+__("Media type");
+__("Modification time");
+__("No directory.");
+__("No file.");
+__("Page(s):");
+__("Preview:");
+__("Preview");
+__("Size");
+__("Sort files:");
+__("Type");
+__("Zip file content");

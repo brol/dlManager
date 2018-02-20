@@ -1,0 +1,22 @@
+v1.1.9 (03-08-2017) Pierre Van Glabeke :
+Corrections localisation
+
+v1.1.8 (31-07-2015) Pierre Van Glabeke :
+Modifs widget
+Intégration breadcrumb
+Mustek compatible dc2.8
+dc2.8 requis
+
+v1.1.7 (10-01-2015) Pierre Van Glabeke :
+Compatibilité dc2.7 (widget + templates)
+Dotclear 2.7.3 requis
+
+v1.1.6 (28-06-2014) Pierre Van Glabeke :
+Correction php 5.3
+Ajout combo page, content_only et css dans le widget
+Ajout dans le dashboard
+Début mise à plat des settings
+Modifications de l'aide intégrée et localisation
+Modifications visuelles de la page d'admin du plugin (dc2.6) + icône
+Déplacement et renommage de facebox.css
+Suppression fin de ligne unix

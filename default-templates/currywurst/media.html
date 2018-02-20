@@ -1,0 +1,227 @@
+{{tpl:extends parent="__layout.html"}}
+
+<tpl:Block name="head-title">
+	<title>{{tpl:lang Download manager}} - {{tpl:DLMCurrentDir}} - {{tpl:BlogName encode_html="1"}}</title>
+</tpl:Block>
+
+<tpl:Block name="meta-robots">
+	<meta name="ROBOTS" content="{{tpl:BlogMetaRobots robots="NOINDEX,NOFOLLOW"}}" />
+</tpl:Block>
+
+<tpl:Block name="meta-entry">
+	<meta name="author" content="{{tpl:BlogEditor encode_html="1"}}" />
+	<meta name="date" content="{{tpl:BlogUpdateDate iso8601="1"}}" />
+</tpl:Block>
+
+<tpl:Block name="dc-entry">
+	<meta property="dc.title" lang="{{tpl:BlogLanguage}}" content="{{tpl:lang Download manager}} - {{tpl:DLMCurrentDir}} - {{tpl:BlogName encode_html="1"}}" />
+	<meta property="dc.language" content="{{tpl:BlogLanguage}}" />
+	<meta property="dc.date" content="{{tpl:BlogUpdateDate iso8601="1"}}" />
+</tpl:Block>
+
+<tpl:Block name="head-linkrel">
+	<link rel="top" href="{{tpl:BlogURL}}" title="{{tpl:lang Home}}" />
+	<link rel="contents" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
+
+  <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="{{tpl:BlogFeedURL type="atom"}}" />
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="{{tpl:BlogRSDURL}}" />
+  <link rel="meta" type="application/xbel+xml" title="Blogroll" href="{{tpl:BlogrollXbelLink}}" />
+</tpl:Block>
+
+<tpl:Block name="html-head">
+	{{tpl:parent}}
+	
+  <style type="text/css">
+		.center {text-align:center;}
+		.size {white-space:pre;}
+		.number {text-align:right;}
+		dt {font-weight:bold;}
+  </style>
+
+  <link rel="stylesheet" href="{{tpl:BlogQmarkURL}}pf=dlManager/css/dlmanager_facebox.css" type="text/css" media="screen" />
+
+	<script type="text/javascript" src="{{tpl:BlogQmarkURL}}pf=dlManager/js/facebox.pack.js"></script>
+
+	<script type="text/javascript">
+	//<![CDATA[
+	  $(document).ready(function () {
+	  	$.facebox.settings.opacity = 0.3;
+	  	$.facebox.settings.loadingImage = '{{tpl:BlogQmarkURL}}pf=dlManager/images/facebox/loading.gif';
+	  	$.facebox.settings.closeImage = '{{tpl:BlogQmarkURL}}pf=dlManager/images/facebox/close.png';
+			$('a.preview').click(function () {
+				$.get($(this).attr('href'), function(data) {
+					data = $(data).find('#file');
+					var imagemeta = $(data).children('#imagemeta');
+					/* http://forum.dotclear.net/viewtopic.php?pid=233757#p233757 */
+					var link = $('<a href="#">' + imagemeta.find('h3:first').text() + '</a>').click(function() {
+						imagemeta.find('dl:first').show(200);
+						$(this).parent().html($(this).text());
+						return false;
+					});
+					imagemeta.find('h3:first').empty().append(link);
+					imagemeta.find('dl:first').hide();
+				  $.facebox(data);
+				});
+				return(false);
+			});
+		});
+	//]]>
+  </script>
+</tpl:Block>
+
+<tpl:Block name="body-tag"><body class="dc-dlmanager"></tpl:Block>
+
+<tpl:Block name="main-content">
+
+<div class="content-inner">
+	<div id="content-info">
+		<h2>
+			{{tpl:lang Download manager}}
+		</h2>
+	</div>
+
+	<tpl:SysIfFormError>
+		<div class="error">{{tpl:SysFormError}}</div>
+	</tpl:SysIfFormError>
+
+	<div id="dlmanager">
+		<p>
+			<a href="{{tpl:DLMBaseURL}}">{{tpl:lang Home}}</a> /
+			<!-- # loop on directory path, display dir / subdir -->
+			<tpl:DLMBreadCrumb>
+				<a href="{{tpl:DLMBreadCrumbDirURL}}">
+					{{tpl:DLMBreadCrumbDirName}}</a> /
+			</tpl:DLMBreadCrumb>
+		</p>
+		
+		<!-- #<h3>{{tpl:lang Directories}}</h3>
+		
+		<tpl:DLMIfNoItem type="dirs">
+			<p>{{tpl:lang No directory.}}</p>
+		</tpl:DLMIfNoItem>-->
+
+		<tpl:DLMItems type="dirs">
+			<tpl:LoopPosition start="1" length="1">
+				<h3>{{tpl:lang Directories}}</h3>
+				<ul id="dlmanager-dirs">
+			</tpl:LoopPosition>
+				<li><a href="{{tpl:DLMItemDirPath}}">
+					{{tpl:DLMItemBasename}}</a></li>
+			<tpl:LoopPosition start="-1">
+				</ul>
+			</tpl:LoopPosition>
+		</tpl:DLMItems>
+
+		<!-- #<h3>{{tpl:lang Files}}</h3>
+		
+		<tpl:DLMIfSortIsEnabled>
+			<form method="post" action="{{tpl:SysSelfURI}}">
+				<p>
+					{{tpl:lang Sort files:}}
+					{{tpl:DLMFileSortOptions}}
+					<input class="submit" type="submit" value="ok" />
+				</p>
+			</form>
+		</tpl:DLMIfSortIsEnabled>
+		
+		<tpl:DLMIfNoItem type="files">
+			<p>{{tpl:lang No file.}}</p>
+		</tpl:DLMIfNoItem>-->
+
+		<tpl:DLMItems type="files">
+			<tpl:LoopPosition start="1" length="1">
+				<h3>{{tpl:lang Files}}</h3>
+				
+				<tpl:DLMIfSortIsEnabled>
+					<form method="post" action="{{tpl:SysSelfURI}}">
+						<p>
+							{{tpl:lang Sort files:}}
+							{{tpl:DLMFileSortOptions}}
+							<input class="submit" type="submit" value="ok" />
+						</p>
+					</form>
+				</tpl:DLMIfSortIsEnabled>
+				
+				<tpl:DLMIfPages>
+					<p>{{tpl:lang Page(s):}} {{tpl:DLMPageLinks}}</p>
+				</tpl:DLMIfPages>
+				
+				<table rules="rows" id="dlmanager-files">
+					<thead>
+						<tr>
+							<th>{{tpl:lang Type}}</th>
+							<th title="{{tpl:lang Basename}} - {{tpl:lang Extension}}">
+								{{tpl:lang File}}
+							</th>
+							<th>{{tpl:lang Preview}}</th>
+							<th>{{tpl:lang Size}}</th>
+							<!-- #<th>{{tpl:lang Type}}</th>-->
+							<!-- #<th>{{tpl:lang Media type}}</th>-->
+							<!-- #<th>{{tpl:lang Extension}}</th>-->
+							<th>{{tpl:lang Modification time}}</th>
+							<tpl:DLMIfDownloadCounter>
+								<th>{{tpl:lang Downloads}}</th>
+							</tpl:DLMIfDownloadCounter>
+						</tr>
+					</thead>
+					<tbody>
+			</tpl:LoopPosition>
+			<tr class="{{tpl:DLMItemMediaType}}">
+				<td><img src="{{tpl:BlogQmarkURL}}pf=dlManager/images/media/{{tpl:DLMItemMediaType}}.png"
+					width="48" height="48" title="{{tpl:DLMItemMediaType}}" alt="{{tpl:DLMItemMediaType}}" /></td>
+				<td>
+					<a href="{{tpl:DLMItemDlURL}}" title="{{tpl:DLMItemBasename}}">
+						{{tpl:DLMItemTitle}}
+					</a>
+				</td>
+				<td class="center">
+					<a href="{{tpl:DLMItemPlayerURL}}" class="preview" title="{{tpl:lang Preview:}} {{tpl:DLMItemBasename}}">
+						<!-- # image files -->
+						<tpl:DLMItemIf media_type="image">
+							<img src="{{tpl:BlogQmarkURL}}pf=dlManager/images/image.png" alt="{{tpl:lang Preview}}" />
+						</tpl:DLMItemIf>
+						<!-- # mp3 files -->
+						<tpl:DLMItemIf type="audio/mpeg3">
+							<img src="{{tpl:BlogQmarkURL}}pf=dlManager/images/music.png" alt="{{tpl:lang Preview}}" />
+						</tpl:DLMItemIf>
+						<!-- # flv, mp4 and m4v files -->
+						<tpl:DLMItemIf operator="or" type="video/x-flv,video/mp4,video/x-m4v">
+							<img src="{{tpl:BlogQmarkURL}}pf=dlManager/images/film.png" alt="{{tpl:lang Preview}}" />
+						</tpl:DLMItemIf>
+						<!-- # zip files -->
+						<tpl:DLMItemIf type="application/zip">
+							<img src="{{tpl:BlogQmarkURL}}pf=dlManager/images/briefcase.png" alt="{{tpl:lang Preview}}" />
+						</tpl:DLMItemIf>
+						<!-- # text files -->
+						<tpl:DLMItemIf media_type="text">
+							<img src="{{tpl:BlogQmarkURL}}pf=dlManager/images/page_white_text.png" alt="{{tpl:lang Preview}}" />
+						</tpl:DLMItemIf>
+						<!-- # other files -->
+						<tpl:DLMItemIf operator="&&" media_type="!image,text" type="!audio/mpeg3,video/x-flv,video/mp4,video/x-m4v,application/zip">
+							<img src="{{tpl:BlogQmarkURL}}pf=dlManager/images/information.png" alt="{{tpl:lang Informations}}" />
+						</tpl:DLMItemIf>
+					</a>
+				</td>
+				<td class="size">{{tpl:DLMItemSize format="1"}}</td>
+				<!-- #<td>{{tpl:DLMItemType}}</td>			return "text/plain" -->
+				<!-- #<td>{{tpl:DLMItemMediaType}}</td>	return "text" -->
+				<!-- #<td>{{tpl:DLMItemExtension}}</td>	return "txt" -->
+				<!-- # date_format and time_format use blog settings,
+					see http://php.net/strftime for other syntax -->
+				<td>{{tpl:DLMItemMTime format="date_format"}} {{tpl:DLMItemMTime format="time_format"}}</td>
+				<tpl:DLMIfDownloadCounter>
+					<td class="number">{{tpl:DLMItemDlCount}}</td>
+				</tpl:DLMIfDownloadCounter>
+			</tr>
+			<tpl:LoopPosition start="-1">
+				</tbody>
+				</table>
+				<tpl:DLMIfPages>
+					<p>{{tpl:lang Page(s):}} {{tpl:DLMPageLinks}}</p>
+				</tpl:DLMIfPages>
+			</tpl:LoopPosition>
+		</tpl:DLMItems>
+	</div><!-- End #dlmanager -->
+
+</div><!-- End #content-inner -->
+</tpl:Block>
