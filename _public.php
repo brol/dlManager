@@ -353,7 +353,7 @@ class dlManagerPageDocument extends dcUrlHandlers
 				readfile($file->file);
 				exit;
 				# header('Location:'.$file->file_url);
-				exit;
+				//exit;
 			}
 			else
 			{

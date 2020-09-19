@@ -27,13 +27,13 @@ $this->registerModule(
      /* Name */                      "DL Manager",
      /* Description*/                "Download manager with a public page and a widget",
      /* Author */                    "Moe, Osku, Tomtom, Pierre Van Glabeke",
-     /* Version */                   '1.1.9',
+     /* Version */                   '1.2.0',
 	/* Properties */
 	array(
 		'permissions' => 'admin',
 		'type' => 'plugin',
 		'dc_min' => '2.9',
-		'support' => 'http://lab.dotclear.org/wiki/plugin/dlManager/fr',
+		'support' => 'https://forum.dotclear.org/viewtopic.php?id=49551',
 		'details' => 'http://lab.dotclear.org/wiki/plugin/dlManager/fr'
 		)
 );
